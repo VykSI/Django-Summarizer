@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from app_name import views
-from .settings import MEDIA_ROOT,MEDIA_URL
+from .settings import MEDIA_ROOT,MEDIA_URL,STATIC_URL,STATIC_ROOT
 from django.conf.urls.static import static
 from django.urls import include, path
 from django.urls import path
@@ -40,3 +40,4 @@ urlpatterns = [
     path('audio/<str:uname>',views.audio),
     path('makeittrue/<str:uname>',views.makeittrue),
 ]+ static(MEDIA_URL, document_root=MEDIA_ROOT)
+urlpatterns+=static(STATIC_URL,document_root=STATIC_ROOT)
