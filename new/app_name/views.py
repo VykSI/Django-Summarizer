@@ -113,7 +113,7 @@ def payment(request,uname):
             box_size=10,
             border=4,
             )
-     gpay_uri = 'upi://pay?pa=vishalsmurali@okhdfcbank&pn=Vishal S Murali&am=50.00&cu=INR&aid=uGICAgICfiuT0ag'
+     gpay_uri = Add you gpay link'
      
      qr.add_data(gpay_uri)
      qr.make(fit=True)
@@ -126,11 +126,11 @@ def payment(request,uname):
      qr_img.save(settings.MEDIA_ROOT+ '/' + img_name)
      
      
-     email_sender='vtech232003@gmail.com'
-     email_password='yjgnaqafqtoylopf'
-     email_receiver='vishalsmurali@gmail.com'
+     email_sender='email'
+     email_password='password'
+     email_receiver='email'
      em=EmailMessage()
-     em['From']='vtech232003@gmail.com'
+     em['From']='email'
      em['To']=''
      em['subject']='True'
      em.set_content('/makeittrue/{}'.format(uname))
